@@ -1,0 +1,214 @@
+Q1. Write a program to find intersection of two sorted arrays in Java?
+
+Array 1: [12, 34, 56, 67, 89]
+Array 2: [21,56, 78,90]
+Intersection: 56
+
+ans->
+
+import java.util.Scanner;
+class Q1
+{
+  public static void main(String args[])
+  {
+   Scanner sc=new Scanner(System.in);
+   System.out.println("Enter N number: ");
+    int num=sc.nextInt();
+    int arr1[]=new int[num];
+    int arr2[]=new int[num];
+   int temp=0;
+       int k=0; 
+
+   System.out.println("Enter elements in array: ");
+    for(int i=0;i<arr1.length;i++)
+   {
+      arr1[i]=sc.nextInt();
+  }
+  System.out.println("Enter elements in 2nd array: ");
+  for(int i=0;i<arr2.length;i++)
+  {
+     arr2[i]=sc.nextInt();
+ }
+ int intersection[]=new int[num];
+ for(int i=0;i<arr1.length;i++)
+ {
+    for(int j=0;j<arr2.length;j++)
+    {
+         if(arr1[i] == arr2[j])
+         {
+           intersection[k]=arr2[j];
+           k++;
+         }
+    }
+}
+System.out.print("intersection is :");
+for(int l=0;l<intersection.length;l++)
+{
+  if(intersection[l] > 0){
+   
+    System.out.print(intersection[l]+ " ");
+  }
+}
+   }
+}
+
+#########################################################################################
+
+    /* Q. How do you find the missing number in a given integer array of 1 to 100?
+    Size of array : 10
+    Array Element: [1, 3 , 5, 6, 7, 9]
+    Missing Element: 2,4,8,10.
+    */
+    import java.util.Scanner;
+    class Q2
+    {
+    public static void main(String args[])
+    {
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter N number: ");
+        int num=sc.nextInt();
+        int arr[]=new int[num];
+    
+        
+int  flag=0;
+    System.out.println("Enter elements in array: ");
+        for(int i=0;i<arr.length;i++)
+    {
+        arr[i]=sc.nextInt();
+    }
+    for(int i=0;i<=10;i++)
+    {
+       
+        for(int j=0;j<arr.length;j++){
+     
+            if(arr[j]==i)
+                flag=1;
+        }
+        if(flag==0){
+        System.out.print(i+" ");
+    
+        }
+        flag=0;
+    }
+    }
+    }
+
+    
+###########################################################################################
+/* Q3. Write a program to repeat a number in a given array by two times?
+
+Array 1: [1,2,3]
+Output: [1,1,1,2,2,2,3,3,3] */
+Ans->
+
+import java.util.Scanner;
+class Q3
+{
+  public static void main(String args[])
+  {
+   Scanner sc=new Scanner(System.in);
+   System.out.println("Enter N number: ");
+    int num=sc.nextInt();
+    int arr1[]=new int[num];
+   
+
+   System.out.println("Enter elements in array: ");
+    for(int i=0;i<arr1.length;i++)
+   {
+      arr1[i]=sc.nextInt();
+  }
+  for(int i=0;i<arr1.length;i++)
+   {
+       
+    System.out.print(arr1[i]+","+arr1[i]+","+arr1[i]);
+    if(i<arr1.length-1){
+        System.out.print(",");
+        }
+  }
+
+
+   }
+}
+ 
+ ################################################################################################
+ /* Q4 . Write a program to check if an array contains a value or not in Java?
+
+Array 1: [12, 34, 45,65, 76]
+Num: 23
+ output: Not present
+num : 65 */
+
+Ans->
+
+import java.util.Scanner;
+class Q4
+{
+  public static void main(String args[])
+  {
+   Scanner sc=new Scanner(System.in);
+  
+   
+    int arr1[]=new int[4];
+   int flag= 0;
+
+   System.out.println("Enter elements in array: ");
+    for(int i=0;i<arr1.length;i++)
+   {
+      arr1[i]=sc.nextInt();
+  }
+  System.out.println("Enter the number you want to check: ");
+  int num=sc.nextInt();
+  for(int i=0;i<arr1.length;i++)
+  {
+      if( arr1[i] == num){
+      flag= 1;
+  }
+      else 
+     flag=0;
+ }
+ if(flag==1)
+ System.out.println("NUmber is present");
+   else
+   System.out.println("NUmber is not present ");
+   }
+}
+
+##################################################################################################
+/* Q5. Write a program to find the smallest and the largest number in an array ?
+
+Array 1: [12, 34, 45,65, 76]
+Min: 12
+Max: 76 */
+
+Ans->
+import java.util.Scanner;
+class Q5
+{
+  public static void main(String args[])
+  {
+   Scanner sc=new Scanner(System.in);
+  
+   
+    int arr1[]=new int[4];
+  
+
+   System.out.println("Enter elements in array: ");
+    for(int i=0;i<arr1.length;i++)
+   {
+      arr1[i]=sc.nextInt();
+  }
+  int small= arr1[0];
+  int large= arr1[0];
+  for(int i=1;i<arr1.length;i++)
+  {
+    if(arr1[i] > large){
+        large=arr1[i];
+    }
+    if(arr1[i]<small){
+        small=arr1[i];
+    }
+ }
+ System.out.println("the smallest number is "+small);
+ System.out.println("the largest number is "+large);
+   }
+}
